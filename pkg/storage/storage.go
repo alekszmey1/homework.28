@@ -1,6 +1,8 @@
 package storage
 
-import "homework.28/student"
+import (
+	"homework.28/pkg/student"
+)
 
 type University struct {
 	StudentByName map[string]*student.Student
@@ -14,7 +16,7 @@ func NewUniversity () *University {
 func (u *University)Put(s *student.Student)(){
 	u.StudentByName[s.Name] = s
 }
-func (u *University) GetAll()[]*student.Student{
+func (u *University) GetAll()[]*student.Student {
 	var students []*student.Student
 	for _, v := range u.StudentByName {
 		students = append(students,v)
